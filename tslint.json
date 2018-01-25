@@ -16,7 +16,6 @@
     "arrow-return-shorthand": [true, "multiline"],
     "no-trailing-whitespace": true,
     "quotemark": [true, "double"],
-    "semicolon": [true, "always"],
-    "variable-name": [true, "ban-keywords", "check-format"]
+    "semicolon": [true, "always"]
   }
 }

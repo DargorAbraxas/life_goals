@@ -1,0 +1,16 @@
+html
+  head
+    script(src='/bundle.js')
+    title= title
+  body
+    h1= message
+
+    div
+      form(method="post", action="/register")
+        p firstName: 
+          input(type="text", name="firstName", placeholder="First Name")
+        p Username: 
+          input(type="text", name="username", placeholder="Username")
+        input(type="submit", value="Submit")
+
+    
