@@ -2,8 +2,9 @@
 
 import * as express from "express";
 import * as bodyParser from "body-parser";
+import * as Promise from "bluebird";
 
-import register from "./register/register";
+import register from "./users/register/register";
 
 const path = require("path");
 

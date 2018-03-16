@@ -1,10 +1,9 @@
 {
   "rules": {
     "arrow-parens": [true, "ban-single-arg-parens"],
-    "curly": [true, "as-needed"],
+    "curly": [true],
     "no-conditional-assignment": true,
     "no-eval": true,
-    "no-shadowed-variable": true,
     "no-string-literal": true,
     "no-unused-variable": true,
     "no-var-keyword": true,
@@ -13,7 +12,6 @@
     "indent": [true, "spaces", 2],
     "no-duplicate-imports": true,
     "prefer-const": true,
-    "arrow-return-shorthand": [true, "multiline"],
     "no-trailing-whitespace": true,
     "quotemark": [true, "double"],
     "semicolon": [true, "always"]

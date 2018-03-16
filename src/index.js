@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 const bodyParser = require("body-parser");
-const register_1 = require("./register/register");
+const register_1 = require("./users/register/register");
 const path = require("path");
 const app = express();
 app.use(express.static(path.join(__dirname, "../dist")));
