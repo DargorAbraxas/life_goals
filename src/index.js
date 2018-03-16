@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 const bodyParser = require("body-parser");
+const register_1 = require("./register/register");
 const path = require("path");
 const app = express();
 app.use(express.static(path.join(__dirname, "../dist")));
@@ -13,6 +14,7 @@ app.get("/", function (req, res) {
     res.render("index", { title: "Register", message: "Example" });
 });
 app.post("/register", function (req, res) {
+    register_1.default(req.body);
     res.render("index", { title: "Register", message: "Registered" });
 });
 app.listen(3000, () => console.log("Example app listening on port 3000!"));
