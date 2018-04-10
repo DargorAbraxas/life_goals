@@ -12,7 +12,7 @@ export interface UserAttrs {
   id?: number;
   lastName?: string;
   password?: string;
-  userName?: string;
+  username?: string;
 }
 
 export default function(
@@ -53,12 +53,24 @@ export default function(
         }
       }
     },
-    Username: {
+    username: {
       type: dataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: {
           msg: "Username cannot be empty"
+        },
+        isUnique: function(value) {
+          return model.findOne({
+            where: {
+              username: value
+            }
+          }).then(user => {
+            if (user) {
+              return Promise.reject("Username already in use");
+            }
+            return Promise.resolve(value);
+          });
         }
       }
     }

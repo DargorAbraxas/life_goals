@@ -3,7 +3,7 @@ const tableName = "Users";
 const id = "id";
 const firstName = "firstName";
 const lastName = "lastName";
-const userName = "userName";
+const username = "username";
 const password = "password";
 module.exports = {
     up: function (queryInterface, sequelize) {
@@ -23,7 +23,7 @@ module.exports = {
                     allowNull: false,
                     type: sequelize.STRING
                 },
-                userName: {
+                username: {
                     allowNull: false,
                     type: sequelize.STRING
                 },

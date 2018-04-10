@@ -6,7 +6,7 @@ const tableName: string = "Users";
 const id: string = "id";
 const firstName: string = "firstName";
 const lastName: string = "lastName";
-const userName: string = "userName";
+const username: string = "username";
 const password: string = "password";
 
 export = {
@@ -27,7 +27,7 @@ export = {
           allowNull: false,
           type: sequelize.STRING
         },
-        userName: {
+        username: {
           allowNull: false,
           type: sequelize.STRING
         },

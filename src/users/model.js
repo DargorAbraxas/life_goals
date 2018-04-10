@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const Promise = require("bluebird");
 function default_1(sequelize, dataTypes) {
     const model = sequelize.define("User", {
         firstName: {
@@ -35,12 +36,24 @@ function default_1(sequelize, dataTypes) {
                 }
             }
         },
-        Username: {
+        username: {
             type: dataTypes.STRING,
             allowNull: false,
             validate: {
                 notEmpty: {
                     msg: "Username cannot be empty"
+                },
+                isUnique: function (value) {
+                    return model.findOne({
+                        where: {
+                            username: value
+                        }
+                    }).then(user => {
+                        if (user) {
+                            return Promise.reject("Username already in use");
+                        }
+                        return Promise.resolve(value);
+                    });
                 }
             }
         }
